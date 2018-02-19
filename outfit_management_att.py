@@ -8,7 +8,7 @@ from collections import OrderedDict
 
 #Change File Paths
 READ_CSVPATH = '/var/www/FlaskApp/FlaskApp/static/read.csv'
-WRITE_CSVPATH = '/var/www/FlaskApp/FlaskApp/static/csv/att.csv'
+WRITE_CSVPATH = '/var/www/FlaskApp/FlaskApp/static/att.csv'
 IMAGEPATH = '/var/www/FlaskApp/FlaskApp/static/Pics/'
 #READ_CSVPATH = 'read.csv'
 #WRITE_CSVPATH = 'static/csv/att.csv'
