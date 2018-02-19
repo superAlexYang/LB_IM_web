@@ -1,0 +1,370 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}Flask Basics{% endblock %}</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/css/main113.css">
+
+    </head>
+    <body>
+
+      <div class="col-md-12 label-block" style="height:100vh">
+        <h3 align="center"><strong>RACE-Group01</strong></h3>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{pg_percent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{pg_percent}}%">
+           <h7><strong>{{page_number}}</strong>/<strong>{{page_tt_number}}</strong><strong>_____</strong><strong>{{pg_percent}}%</strong></h7>
+          </div>
+        </div>
+
+          <form action="{{ url_for('save_RACE') }}" method="POST">
+            <input type = "hidden" name = "image_name" value = "{{imageDict['image_name']}},{{imageDict2['image_name']}},{{imageDict3['image_name']}},{{imageDict4['image_name']}},{{imageDict5['image_name']}},{{imageDict6['image_name']}},{{imageDict7['image_name']}},{{imageDict8['image_name']}},{{imageDict9['image_name']}},{{imageDict10['image_name']}},{{imageDict11['image_name']}},{{imageDict12['image_name']}},{{imageDict13['image_name']}},{{imageDict14['image_name']}},{{imageDict15['image_name']}},{{imageDict16['image_name']}},{{imageDict17['image_name']}},{{imageDict18['image_name']}},{{imageDict19['image_name']}},{{imageDict20['image_name']}},{{imageDict21['image_name']}},{{imageDict22['image_name']}},{{imageDict23['image_name']}},{{imageDict24['image_name']}},{{imageDict25['image_name']}},{{imageDict26['image_name']}},{{imageDict27['image_name']}},{{imageDict28['image_name']}},{{imageDict29['image_name']}},{{imageDict30['image_name']}}" />
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">1</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict['image_name']}}"/ height="100" width="100">
+        {% for choice in options.values()[0] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[0]}}-{{choice}}" name="{{options.keys()[0]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[0]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">2</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict2['image_name']}}" / height="100" width="100">
+           {% for choice in options.values()[1] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[1]}}-{{choice}}" name="{{options.keys()[1]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[1]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">3</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict3['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[2] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[2]}}-{{choice}}" name="{{options.keys()[2]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[2]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">4</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict4['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[3] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[3]}}-{{choice}}" name="{{options.keys()[3]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[3]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">5</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict5['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[4] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[4]}}-{{choice}}" name="{{options.keys()[4]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[4]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">6</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict6['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[5] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[5]}}-{{choice}}" name="{{options.keys()[5]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[5]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">7</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict7['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[6] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[6]}}-{{choice}}" name="{{options.keys()[6]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[6]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">8</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict8['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[7] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[7]}}-{{choice}}" name="{{options.keys()[7]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[7]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">9</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict9['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[8] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[8]}}-{{choice}}" name="{{options.keys()[8]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[8]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">10</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict10['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[9] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[9]}}-{{choice}}" name="{{options.keys()[9]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[9]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">11</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict11['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[10] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[10]}}-{{choice}}" name="{{options.keys()[10]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[10]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">12</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict12['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[11] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[11]}}-{{choice}}" name="{{options.keys()[11]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[11]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">13</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict13['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[12] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[12]}}-{{choice}}" name="{{options.keys()[12]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[12]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">14</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict14['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[13] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[13]}}-{{choice}}" name="{{options.keys()[13]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[13]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">15</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict15['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[14] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[14]}}-{{choice}}" name="{{options.keys()[14]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[14]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">16</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict16['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[15] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[15]}}-{{choice}}" name="{{options.keys()[15]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[15]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">17</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict17['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[16] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[16]}}-{{choice}}" name="{{options.keys()[16]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[16]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">18</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict18['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[17] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[17]}}-{{choice}}" name="{{options.keys()[17]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[17]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">19</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict19['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[18] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[18]}}-{{choice}}" name="{{options.keys()[18]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[18]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">20</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict20['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[19] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[19]}}-{{choice}}" name="{{options.keys()[19]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[19]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">21</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict21['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[20] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[20]}}-{{choice}}" name="{{options.keys()[20]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[20]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">22</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict22['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[21] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[21]}}-{{choice}}" name="{{options.keys()[21]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[21]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">23</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict23['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[22] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[22]}}-{{choice}}" name="{{options.keys()[22]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[22]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 24vh">
+          <h8 id="image-title">24</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict24['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[23] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[23]}}-{{choice}}" name="{{options.keys()[23]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[23]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+
+
+
+
+<div class="col-md-1 img-block" style="width: 9vw; height: 22vh">
+          <h8 id="image-title">25</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict25['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[24] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[24]}}-{{choice}}" name="{{options.keys()[24]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[24]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 22vh">
+          <h8 id="image-title">26</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict26['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[25] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[25]}}-{{choice}}" name="{{options.keys()[25]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[25]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 22vh">
+          <h8 id="image-title">27</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict27['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[26] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[26]}}-{{choice}}" name="{{options.keys()[26]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[26]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 22vh">
+          <h8 id="image-title">28</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict28['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[27] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[27]}}-{{choice}}" name="{{options.keys()[27]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[27]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 22vh">
+          <h8 id="image-title">29</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict29['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[28] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[28]}}-{{choice}}" name="{{options.keys()[28]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[28]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+
+        <div class="col-md-1 img-block" style="width: 9vw; height: 22vh">
+          <h8 id="image-title">30</h8>
+          <img class=".label-image" src="../static/Pics/{{imageDict30['image_name']}}" / height="100" width="100">
+          {% for choice in options.values()[29] %}
+        <div class="form-check form-check-inline">
+             <input class="form-check-input" type="radio" id="{{options.keys()[29]}}-{{choice}}" name="{{options.keys()[29]}}" value="{{choice}}" required>
+             <label class="form-check-label" for="{{options.keys()[29]}}-{{choice}}"">{{choice}}</label>
+        </div>
+        {% endfor %}
+        </div> 
+      <div>
+            <button type="submit" class="btn btn-success btn-lg btn-block" >Next</button>
+          </form>
+        </div>
+      
+        <form action="{{ url_for('index') }}">
+            <button type="submit" class="btn btn-success btn-lg btn-block">Back Home</button>
+          </form>
+
+        </div>
+    </body>
+</html>
