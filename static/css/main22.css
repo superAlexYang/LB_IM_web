@@ -1,0 +1,79 @@
+.label-image {
+  padding-top: 16px;
+  display: block;
+  position: fixed;
+  top: 65px;
+  left: 40px;
+
+  margin: auto;
+  width: 20%;
+  max-height: 750px;
+  object-fit: contain;
+}
+
+#image-title {
+
+  color: white;
+
+  padding-top: 10px;
+  text-align: center;
+}
+
+body {
+  background: #F3F4F5;
+  color: #878787;
+  line-height: .875em;
+  height: auto;
+}
+
+.label-group {
+  margin-bottom: 32px;
+}
+
+.img-block {
+  background-color: #3E5D85;
+  height:50vh;
+}
+
+.label-block {
+  padding: 32px;
+  background-color: #3E5D85;
+  height:100vh;
+}
+
+.choice-selector {
+  margin-top: 0px;
+  margin-right: 2px;
+  border-radius: 0px;
+  height: 30px;
+}
+
+.choice-selector label {
+  cursor: pointer;
+	height: 20px;
+	background: #EDF2F2;
+  padding: 0.2px 0.2px 0.2px 0.2px;
+  border-radius: 2px;
+	border:0.2px solid white;
+  color: black;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.choice-selector input[type=checkbox]:checked + label {
+	background-color: #313333;
+/*  color: #EDF2F2;*/
+  color: lime;
+  border: 0.2px solid lime;
+}
+
+
+.btn-block {
+  margin-top: 6px;
+}
+
+.label-row{
+  margin-top: 3px;
+}
