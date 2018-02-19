@@ -7,13 +7,13 @@ import file_management as fm
 from collections import OrderedDict
 
 #Change File Paths
-#READ_CSVPATH = '/var/www/FlaskApp/FlaskApp/static/read.csv'
-#WRITE_CSVPATH = '/var/www/FlaskApp/FlaskApp/static/gender.csv'
-#IMAGEPATH = '/var/www/FlaskApp/FlaskApp/static/Pics/'
+READ_CSVPATH = '/var/www/FlaskApp/FlaskApp/static/read.csv'
+WRITE_CSVPATH = '/var/www/FlaskApp/FlaskApp/static/csv/gender.csv'
+IMAGEPATH = '/var/www/FlaskApp/FlaskApp/static/Pics/'
 
-READ_CSVPATH = 'read.csv'
-WRITE_CSVPATH = 'static/csv/gender.csv'
-IMAGEPATH = 'static/Pics/'
+#READ_CSVPATH = 'read.csv'
+#WRITE_CSVPATH = 'static/csv/gender.csv'
+#IMAGEPATH = 'static/Pics/'
 
 read_fieldnames=['image_name', 'gender-male','gender-female','gender-unknown', 'score']
 new_fieldnames={'gender-unknown':'unknown'}
